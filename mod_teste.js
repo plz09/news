@@ -1,0 +1,5 @@
+module.exports = () => {
+    var msg = "Este modulo contem uma string";
+    return msg
+};
+
