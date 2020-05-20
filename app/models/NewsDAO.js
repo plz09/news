@@ -13,7 +13,6 @@ NewsDAO.prototype.getNews_detail = function(callback) {
 }
 
 NewsDAO.prototype.saveNews = function(news, callback) {
-    console.log(news);
     this._connection.query('insert into news set ?', news, callback);
 }
 

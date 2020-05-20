@@ -1,6 +1,6 @@
 module.exports = (app) => {
     app.get('/form_news', (req, res) => {
-        res.render("admin/form_add_news");
+        res.render("admin/form_add_news", {validation: {}, news: {}});
     });
  
     app.post('/news/save', (req, res) => {
@@ -14,9 +14,10 @@ module.exports = (app) => {
         req.assert('news','News is mandatory').notEmpty();
  
         var errors = req.validationErrors();
+        console.log(errors)
  
         if(errors) {
-            res.render("admin/form_add_news");
+            res.render("admin/form_add_news", {validation: errors, news: news});
             return;
         }
  
