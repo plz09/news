@@ -46,12 +46,12 @@
 	    	<div class="row">
 	    		<div class="col-md-12">
 	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">By Some Author</span>
-		    			<a href="noticia/1" class="noticia_titulo">News Title</a>
-		    			<span class="noticia_data">01/01/2020</span>
+		    			<span class="noticia_autor"><%= news_detail[0].author %></span>
+		    			<a href="noticia/1" class="noticia_titulo"><%= news_detail[0].title %></a>
+		    			<span class="noticia_data"><%= news_detail[0].news_date %></span>
 		    			<br />
 		    			<p class="noticia_resumo">
-		    				Here is the news full text.
+		    				<%= news_detail[0].resume %>
 		    			</p>
 		    		</div>
 		    	</div>

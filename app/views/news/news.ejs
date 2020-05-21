@@ -43,90 +43,24 @@
 
 
 	    <div class="container">
-	    	<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">By Some Author</span>
-		    			<a href="noticia.html" class="noticia_titulo">News Title</a>
-		    			<span class="noticia_data">01/01/2020</span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Here is the news summary with 100 characters maximum.
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">By Some Author</span>
-		    			<a href="noticia.html" class="noticia_titulo">News Title</a>
-		    			<span class="noticia_data">01/01/2020</span>
 
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Here is the news summary with 100 characters maximum.
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">By Some Author</span>
-		    			<a href="noticia.html" class="noticia_titulo">News Title</a>
-		    			<span class="noticia_data">01/01/2020</span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Here is the news summary with 100 characters maximum.
-		    			</p>
-		    		</div>
-		    	</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">By Some Author</span>
-		    			<a href="noticia.html" class="noticia_titulo">News Title</a>
-		    			<span class="noticia_data">01/01/2020</span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Here is the news summary with 100 characters maximum.
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">By Some Author</span>
-		    			<a href="noticia.html" class="noticia_titulo">News Title</a>
-		    			<span class="noticia_data">01/01/2020</span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Here is the news summary with 100 characters maximum.
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">By Some Author</span>
-		    			<a href="noticia.html" class="noticia_titulo">News Title</a>
-		    			<span class="noticia_data">01/01/2020</span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Here is the news summary with 100 characters maximum.
-		    			</p>
-		    		</div>
-		    	</div>
-	    	</div>
-			
+			<% if(news.length > 0) { %> 
+				<% for(var i = 0; i < news.length; i++) { %> 
+					<div class="row">
+						<div class="col-md-12">
+							<div class="noticia_wrapper">
+								<span class="noticia_autor"><%= news[i].author %></span>
+								<a href="news_detail?id_news=<%= news[i].id_news %>" class="noticia_titulo"><%= news[i].title %></a>
+								<span class="noticia_data"><%= news[i].news_date %> </span>
+								<br />
+								<p class="noticia_resumo">
+									<%= news[i].resume %> 
+								</p>
+							</div>
+						</div>
+					</div>
+				<% } %>
+			<% } %> 
 	    </div>
 	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

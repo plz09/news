@@ -11,7 +11,9 @@ module.exports.news_detail = (app, req, res) => {
     var connection = app.config.dbConnection();
         var newsModel = new app.app.models.NewsDAO(connection);
 
-        newsModel.getNews_detail((error, result) => {
+        var id_news = req.query;
+
+        newsModel.getNews_detail(id_news, (error, result) => {
             res.render("news/news_detail", {news_detail: result});
         });
 }
