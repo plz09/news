@@ -1,13 +1,11 @@
 module.exports = (app) => {
 
     app.get('/news', (req, res) => {
-
-        var connection = app.config.dbConnection();
-        var newsModel = new app.app.models.NewsDAO(connection);
-
-        newsModel.getNews((error, result) => {
-            res.render("news/news", {news: result});
-        });
+        app.app.controllers.news.news(app, req, res);
     });
-    
+
+    app.get('/news_detail', (req, res) => {
+        app.app.controllers.news.news_detail(app, req, res);
+    });
 };
+
